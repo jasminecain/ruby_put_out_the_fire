@@ -8,9 +8,13 @@ def initialize(first_name, last_name)
 end
 
 def patient_status(status)
+  begin
   raise ArgumentError,"Argument is not a string" unless status.is_a? String
 
   @status = status
+  rescue ArgumentError
+    puts 'patient is now a string'
+  end
 end
 
 def patient_currently_admitted?(admit_time)
